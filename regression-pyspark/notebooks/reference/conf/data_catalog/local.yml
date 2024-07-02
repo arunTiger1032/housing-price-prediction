@@ -1,0 +1,34 @@
+# All relevant configurations for the project
+# generic parameters
+reference_date: 2020-08-31
+num_days_prediction: 7
+
+# data path configurations
+raw:
+    filesystem: file
+    base_path: "./../../data/raw/"
+    carrier_data_path: carrier_data.csv # relative to base path
+    fuel_prices_data_path: fuel_prices.csv # relative to base path
+    market_carrier_rates_data_path: market_carrier_rates_data.csv # relative to base path
+    route_mapping_data_path: route_mapping.csv # relative to base path
+
+clean:
+    filesystem: file
+    base_path: "./../../data/cleaned/"
+    carrier_data_path: carrier_data # relative to base path
+    fuel_prices_data_path: fuel_prices # relative to base path
+    market_carrier_rates_data_path: market_carrier_rates # relative to base path
+    final_routes_data_path: final_data
+    trasnformed_routes_data_path: transformed_data
+
+processed:
+    filesystem: file
+    base_path: "./../../data/processed/"
+    train: train_carrier # relative to base path
+    test: test_carrier # relative to base path
+    preds: predictions_carrier # relative to base path
+
+# spark configurations to setup for the spark context
+spark:
+    spark.executer.cores: 4
+    spark.cores.max: 4

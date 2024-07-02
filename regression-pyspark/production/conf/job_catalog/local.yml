@@ -1,0 +1,49 @@
+jobs:
+  - name: data-cleaning
+    stages:
+      - name: "clean_carrier_table"
+        tasks:
+          - name: "carrier_data"
+            params: {}
+      - name: "clean_fuelprice_table"
+        tasks:
+          - name: "fuelprice_data"
+            params: {}
+      - name: "clean_market_carrier_rates_table"
+        tasks:
+          - name: "market_carrier_rates_data"
+            params: { }
+      - name: "clean_final_routes_table"
+        tasks:
+          - name: "final_routes_data"
+            params: { }
+#          - name: "train-test"
+#            params:
+#              target: unit_price
+#              test_size: 0.2
+#
+  - name: feature-engineering
+    stages:
+      - name: "transform_data"
+        tasks:
+          - name: "transform-data"
+            params: {}
+      - name: "create_train_test_split"
+        tasks:
+          - name: "train_test_split"
+            params: {}
+
+  - name: model-gen
+    stages:
+      - name: "model-creation"
+        tasks:
+          - name: "train-model"
+            params:
+              sampling_fraction: 0.1
+
+  - name: model-eval
+    stages:
+      - name: "model-predict"
+        tasks:
+          - name: "score-model"
+            params: {}
