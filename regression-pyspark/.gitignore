@@ -11,6 +11,9 @@
 # ignore joblib files
 *.joblib
 
+:Zone.Identifier
+
+
 # ignore package version file
 **/_version.py
 
